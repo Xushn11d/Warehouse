@@ -1,0 +1,43 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+http://localhost:8080/country/search?name=u
+###
+http://localhost:8080/country
+Content-Type: application/json
+
+{
+  "name": "Qirg'iziston"
+}
+###
+http://localhost:8080/country/withId?size=2&page=1
+###
+
+DELETE http://localhost:8080/country/6
+###
+
+PUT http://localhost:8080/country/7
+Content-Type: application/json
+
+{
+  "name": "Qirg'iziston"
+}
+###
+
+POST http://localhost:8080/country
+Content-Type: application/json
+
+{
+  "name": "Qirg'iziston"
+}
+###
+
+POST http://localhost:8080/city
+Content-Type: application/json
+
+{
+  "name": "Tashkent",
+  "countryId": 1
+}
