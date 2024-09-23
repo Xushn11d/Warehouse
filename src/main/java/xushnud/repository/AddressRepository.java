@@ -1,7 +1,7 @@
-package lesson12.repository;
+package xushnud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import lesson12.entity.Address;
+import xushnud.entity.Address;
 
 public interface AddressRepository extends JpaRepository<Address,Integer> {
 }

@@ -1,9 +1,9 @@
-package lesson12.controller;
+package xushnud.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import lesson12.entity.Country;
-import lesson12.service.CountryService;
+import xushnud.entity.Country;
+import xushnud.service.CountryService;
 
 import java.util.List;
 

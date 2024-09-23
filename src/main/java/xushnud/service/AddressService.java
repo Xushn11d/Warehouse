@@ -1,7 +1,6 @@
-package lesson12.service;
+package xushnud.service;
 
-import org.springframework.web.bind.annotation.*;
-import lesson12.entity.Address;
+import xushnud.entity.Address;
 
 import java.util.List;
 

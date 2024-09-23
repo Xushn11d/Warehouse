@@ -1,13 +1,10 @@
-package lesson12.service;
+package xushnud.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import lesson12.entity.Country;
-import lesson12.repository.CountryRepository;
+import xushnud.entity.Country;
+import xushnud.repository.CountryRepository;
 
 import java.util.List;
 import java.util.Optional;

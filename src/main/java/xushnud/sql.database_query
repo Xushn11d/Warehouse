@@ -1,0 +1,110 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    status BOOLEAN DEFAULT TRUE
+);
+==============================================
+
+CREATE TABLE warehouse (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    main_phone VARCHAR(50) NOT NULL
+);
+==============================================
+
+CREATE TABLE user_warehouse (
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    warehouse_id INT REFERENCES warehouse(id) ON DELETE CASCADE,
+    PRIMARY KEY (user_id, warehouse_id)
+);
+==============================================
+
+CREATE TABLE category (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category_id INT REFERENCES category(id) ON DELETE SET NULL
+);
+==============================================
+
+CREATE TABLE product (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    brand VARCHAR(255),
+    category_id INT REFERENCES category(id) ON DELETE SET NULL
+);
+==============================================
+
+CREATE TABLE input (
+    id SERIAL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    curier_id INT REFERENCES users(id),
+    warehouse_id INT REFERENCES warehouse(id) ON DELETE CASCADE,
+    total_price DECIMAL(10, 2) NOT NULL,
+    has_paid BOOLEAN DEFAULT FALSE
+
+);
+===============================================
+
+CREATE TABLE input_product (
+    id SERIAL PRIMARY KEY,
+    product_id INT REFERENCES product(id) ON DELETE CASCADE,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    input_id INT REFERENCES input(id) ON DELETE CASCADE
+);
+===============================================
+
+CREATE TABLE measurement (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+===============================================
+
+CREATE TABLE input_payment (
+    id SERIAL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    input_id INT REFERENCES input(id) ON DELETE CASCADE
+);
+===============================================
+
+CREATE TABLE output (
+    id SERIAL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    client_id INT REFERENCES users(id),
+    warehouse_id INT REFERENCES warehouse(id) ON DELETE CASCADE,
+    total_price DECIMAL(10, 2) NOT NULL,
+    has_paid BOOLEAN DEFAULT FALSE
+);
+================================================
+
+CREATE TABLE output_product (
+    id SERIAL PRIMARY KEY,
+    product_id INT REFERENCES product(id) ON DELETE CASCADE,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    output_id INT REFERENCES output(id) ON DELETE CASCADE
+);
+================================================
+
+CREATE TABLE output_payment (
+    id SERIAL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    output_id INT REFERENCES output(id) ON DELETE CASCADE
+);
+================================================
+
+CREATE TABLE current_product (
+    id SERIAL PRIMARY KEY,
+    price DECIMAL(10, 2) NOT NULL,
+    quantity INT NOT NULL,
+    input_prodct_id INT REFERENCES input_product(id) ON DELETE CASCADE
+);
+
+

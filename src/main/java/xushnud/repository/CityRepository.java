@@ -1,8 +1,7 @@
-package lesson12.repository;
+package xushnud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import lesson12.entity.City;
-import lesson12.entity.Country;
+import xushnud.entity.City;
 
 import java.util.List;
 

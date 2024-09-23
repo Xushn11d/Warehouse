@@ -1,12 +1,12 @@
-package lesson12.controller;
+package xushnud.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
-import lesson12.entity.City;
-import lesson12.entity.Country;
-import lesson12.payload.CityDTO;
-import lesson12.repository.CityRepository;
-import lesson12.repository.CountryRepository;
+import xushnud.entity.City;
+import xushnud.entity.Country;
+import xushnud.payload.CityDTO;
+import xushnud.repository.CityRepository;
+import xushnud.repository.CountryRepository;
 
 @RestController
 @RequiredArgsConstructor

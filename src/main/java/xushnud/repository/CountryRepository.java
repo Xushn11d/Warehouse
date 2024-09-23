@@ -1,12 +1,10 @@
-package lesson12.repository;
+package xushnud.repository;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import lesson12.entity.Country;
+import xushnud.entity.Country;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface CountryRepository extends JpaRepository<Country, Integer> {

@@ -1,4 +1,4 @@
-package lesson12.entity;
+package xushnud.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

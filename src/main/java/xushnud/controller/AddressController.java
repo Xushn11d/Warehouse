@@ -1,7 +1,7 @@
-package lesson12.controller;
+package xushnud.controller;
 
 import org.springframework.web.bind.annotation.*;
-import lesson12.entity.Address;
+import xushnud.entity.Address;
 
 import java.util.List;
 

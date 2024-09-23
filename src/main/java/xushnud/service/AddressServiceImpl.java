@@ -1,13 +1,13 @@
-package lesson12.controller;
+package xushnud.service;
 
-import lesson12.controller.AddressController;
-import org.springframework.web.bind.annotation.RestController;
-import lesson12.entity.Address;
+import org.springframework.stereotype.Service;
+import xushnud.entity.Address;
 
 import java.util.List;
 
-@RestController
-public class AddressControllerImpl implements AddressController {
+@Service
+public class AddressServiceImpl implements AddressService
+{
     @Override
     public List<Address> getAddresses() {
         return List.of();

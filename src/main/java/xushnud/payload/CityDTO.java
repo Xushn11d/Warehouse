@@ -1,4 +1,4 @@
-package lesson12.payload;
+package xushnud.payload;
 
 import lombok.Data;
 
