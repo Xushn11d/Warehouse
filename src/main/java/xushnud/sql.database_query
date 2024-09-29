@@ -104,7 +104,7 @@ CREATE TABLE current_product (
     id SERIAL PRIMARY KEY,
     price DECIMAL(10, 2) NOT NULL,
     quantity INT NOT NULL,
-    input_prodct_id INT REFERENCES input_product(id) ON DELETE CASCADE
+    input_product_id INT REFERENCES input_product(id) ON DELETE CASCADE
 );
 
 
